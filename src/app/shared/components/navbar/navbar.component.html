@@ -1,0 +1,8 @@
+<header class="navbar">
+    <ul #nav class="listNav">
+        <li *ngFor="let item of navegacion, let i = index">
+            <button (click)="activarBoton(i)"  [routerLink]="[item.link]" routerLinkActive="router-link-active"  routerLinkActive="router-link-active"  routerLinkActive="router-link-active"  routerLinkActive="router-link-active"  [ngClass]="{'activo': item.activo}" class="btn-nav">{{ item.title }}</button>
+        </li>
+        <button #btnMenu class="btn-menu">Abrir</button>
+    </ul>
+</header>

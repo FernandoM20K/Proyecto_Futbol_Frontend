@@ -1,0 +1,120 @@
+<div class="container">
+    <h2 class="title-add">Formulario para Agregar Información de un Estadio</h2>
+    <form class="form-add-club" [formGroup]="ligaForm" (submit)="addLiga()">
+      <!-- CM: Campo de nombre de la Liga -->
+      <div class="form-field">
+        <label for="nombre">Nombre de la Liga</label>
+        <input
+          class="input-club"
+          formControlName="nombre"
+          [ngClass]="{'fail': nombre?.errors?.['required'] && nombre?.touched}"
+          id="nombre"
+          type="text"
+          placeholder="Ingresa el Nombre de la Liga"
+        />
+      </div>
+      <!-- CM: Campo pais de juego de la Competicion -->
+      <div class="form-field">
+        <label for="ciudad">Pais De la Competición</label>
+        <input
+          class="input-club input-club-ciudad"
+          formControlName="paisCompeticion"
+          name="paisCompeticion"
+          type="text"
+          id="paisCompeticion"
+          placeholder="Ingrese el Pais donde se juega la Competicion"
+          [ngClass]="{'fail': paisCompeticion?.errors?.['required'] && paisCompeticion?.touched}"
+        />
+      </div>
+      <div class="mitad">
+        <!-- CM: Campo de numero de Desensos de la Liga -->
+        <div class="form-field">
+          <label for="desensos">Nro de Desensos</label>
+          <input
+            class="input-club"
+            formControlName="desensos"
+            type="number"
+            id="desensos"
+            placeholder="Ingrese el Nro de desensos de la Liga"
+            [ngClass]="{'fail': desensos?.errors?.['required'] && desensos?.touched}"
+        />
+        </div>
+        <!-- CM: Campo de numero de Asensos de la Liga -->
+        <div class="form-field">
+          <label for="asensos">Nro de Asensos</label>
+          <input
+            class="input-club"
+            formControlName="asensos"
+            type="number"
+            id="asensos"
+            placeholder="Ingrese el Nro de asensos de la Liga"
+            [ngClass]="{'fail': asensos?.errors?.['required'] && asensos?.touched}"
+         />
+        </div>
+      </div>
+      <!-- CM: Campo fecha de creacion de la Liga -->
+      <div class="form-field">
+        <label for="fechaCreacion">Fecha de Creacion de la Liga</label>
+        <input
+          class="input-club"
+          formControlName="fechaCreacion"
+          name="fechaCreacion"
+          type="date"
+          id="fechaCreacion"
+          [ngClass]="{'fail': fechaCreacion?.errors?.['required'] && fechaCreacion?.touched}"
+        />
+      </div>
+      <div class="mitad">
+        <!-- CM: Campo de total de jornadas de la Liga -->
+        <div class="form-field">
+          <label for="totalJornadas">Nro total de Jornadas</label>
+          <input
+            class="input-club"
+            formControlName="totalJornadas"
+            type="number"
+            id="totalJornadas"
+            placeholder="Ingrese el Nro de totalJornadas de la Liga"
+            [ngClass]="{'fail': totalJornadas?.errors?.['required'] && totalJornadas?.touched}"
+        />
+        </div>
+        <!-- CM: Campo de numero de Asensos de la Liga -->
+        <div class="form-field">
+          <label for="totalGanadores">Nro total de Ganadores</label>
+          <input
+            class="input-club"
+            formControlName="totalGanadores"
+            type="number"
+            id="totalGanadores"
+            placeholder="Ingrese el totalGanadores de ganadores de la liga"
+            [ngClass]="{'fail': totalGanadores?.errors?.['required'] && totalGanadores?.touched}"
+         />
+        </div>
+      </div>
+      <!-- CM: Campo de logo de la Competicion -->
+      <!-- <div class="form-field">
+        <label for="logoCompeticion">Logo de la Competicion (Ingrese la URL de la Imagen)</label>
+        <input
+          class="input-club"
+          formControlName="logoCompeticion"
+          type="file"
+          id="logoCompeticion"
+          placeholder="Ingrese la URL del logo de la Competicion"
+          [ngClass]="{'fail': logoCompeticion?.errors?.['required'] && logoCompeticion?.touched}"
+        />
+      </div> -->
+      <div class="form-field">
+        <label for="logoCompeticion">Logo de la Competicion (Ingrese la URL de la Imagen)</label>
+        <input
+          class="input-club"
+          formControlName="logoCompeticion"
+          type="text"
+          id="logoCompeticion"
+          placeholder="Ingrese la URL del logo de la Competicion"
+          [ngClass]="{'fail': logoCompeticion?.errors?.['required'] && logoCompeticion?.touched}"
+        />
+      </div>
+      <div class="cont-btn">
+        <button type="input" class="btn-añadir">Añadir Liga</button>
+      </div>
+    </form>
+  </div>

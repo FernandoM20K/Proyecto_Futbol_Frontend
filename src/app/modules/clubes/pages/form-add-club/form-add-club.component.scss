@@ -1,0 +1,55 @@
+.container {
+    margin: 30px 4vw;
+}
+
+.title-add {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.form-add-club {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 0.9rem;
+        color: white;
+    }
+}
+
+.input-club {
+    border-radius: .5rem;
+    padding: 10px;
+    outline: none;
+    border: 3px solid transparent;
+
+    &:focus {
+        border: 3px solid rgb(0, 110, 255);
+    }
+
+    &-historia {
+        height: 25vh;
+        resize: none;
+        &::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 4px;
+        }
+    }
+}
+
+// CM: Clase que se agrega cuando no se cumple con las validaciones del formulario
+.fail {
+    border: 3px solid rgb(207, 31, 0) !important;
+}

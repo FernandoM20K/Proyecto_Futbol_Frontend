@@ -1,0 +1,87 @@
+.container {
+    margin: 30px 4vw;
+}
+
+.title-add {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.form-add-club {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 0.9rem;
+        color: white;
+    }
+}
+
+.input-club {
+    border-radius: .5rem;
+    padding: 10px;
+    outline: none;
+    border: 3px solid transparent;
+
+    &:focus {
+        border: 3px solid rgb(0, 110, 255);
+    }
+
+    &-historia {
+        height: 25vh;
+        resize: none;
+        &::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 4px;
+        }
+    }
+}
+
+.mitad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.cont-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-añadir {
+    padding: 15px 40px;
+    border: none;
+    border-radius: .5rem;
+    background: rgb(165,0,68);
+    background: linear-gradient(270deg, rgba(165,0,68,0.8997724089635855) 0%, rgba(0,77,152,0.8997724089635855) 100%);
+    color: white;
+    width: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    @media (max-width: 700px) {
+        width: 100%;
+    }
+
+    &:hover {
+        box-shadow: 4px 4px 19px 1px rgba(0,0,0,0.78);
+    }
+}
+
+// CM: Clase que se agrega cuando no se cumple con las validaciones del formulario
+.fail {
+    border: 3px solid rgb(207, 31, 0) !important;
+}

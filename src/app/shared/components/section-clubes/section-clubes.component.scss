@@ -1,0 +1,21 @@
+.cont-liga {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+    }
+}
+
+.title {
+    margin: 20px;
+    text-align: center;
+    color: white;
+}
+
+.list-clubs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

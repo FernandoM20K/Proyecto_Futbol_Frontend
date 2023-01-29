@@ -1,0 +1,107 @@
+<div class="container">
+  <h2 class="title-add">Formulario para Agregar Información de un Club</h2>
+  <form class="form-add-club" [formGroup]="clubForm" (submit)="addClub()">
+    <!-- CM: Campo de nombre del Club -->
+    <div class="form-field">
+      <label for="nombre">Nombre del Club</label>
+      <input
+        class="input-club"
+        formControlName="nombre"
+        [ngClass]="{'fail': nombre?.errors?.['required'] && nombre?.touched}"
+        id="nombre"
+        type="text"
+        placeholder="Ingresa el Nombre del Club"
+      />
+    </div>
+    <!-- CM: Campo historia del Club -->
+    <div class="form-field">
+      <label for="historia">Historia del Club</label>
+      <textarea
+        class="input-club input-club-historia"
+        formControlName="historia"
+        name="historia"
+        id="historia"
+        [ngClass]="{'fail': historia?.errors?.['required'] && historia?.touched}"
+      ></textarea>
+    </div>
+    <!-- CM: Campo de fundador del Club -->
+    <div class="form-field">
+      <label for="fundador">Nombre del Fundador del Club</label>
+      <input
+        class="input-club"
+        formControlName="fundador"
+        type="text"
+        id="fundador"
+        placeholder="Ingrese el nombre del fundador"
+        [ngClass]="{'fail': fundador?.errors?.['required'] && fundador?.touched}"
+      />
+    </div>
+    <!-- CM: Campo de propietario del Club -->
+    <div class="form-field">
+      <label for="propietario">Nombre del Propietario del Club</label>
+      <input
+        class="input-club"
+        formControlName="propietario"
+        type="text"
+        id="propietario"
+        placeholder="Ingrese el nombre del propietario"
+        [ngClass]="{'fail': propietario?.errors?.['required'] && propietario?.touched}"
+      />
+    </div>
+    <!-- CM: Campo de fecha de fundacion del Club -->
+    <div class="form-field">
+      <label for="fechaFundacion">Fecha de Fundación del Club</label>
+      <input
+        class="input-club"
+        formControlName="fechaFundacion"
+        type="date"
+        id="fechaFundacion"
+        placeholder="Ingrese la fecha de fundación del Club"
+        [ngClass]="{'fail': fechaFundacion?.errors?.['required'] && fechaFundacion?.touched}"
+      />
+    </div>
+    <!-- CM: Campo de estadio del Club -->
+    <div class="form-field">
+      <label for="estadio">Estadio del Club</label>
+      <select class="input-club" name="estadio" id="estadio">
+        <option class="option" value="0">Seleccione el estadio del Club</option>
+        <!-- CM: Falta traer los valores desde la base de datos e imprimirlos como options -->
+        <option *ngFor="let estadio of listaEstadios" class="option" value="{{ estadio.estadioId }}">{{ estadio.nombre }}</option>
+      </select>
+    </div>
+    <!-- CM: Campo de entrenador actual del Club -->
+    <div class="form-field">
+      <label for="entrenador">Entrenador Actual del Club</label>
+      <select class="input-club" name="entrenador" id="entrenador">
+        <option class="option" value="0">
+          Seleccione el entrenador actual del Club
+        </option>
+        <!-- CM: Falta traer los valores desde la base de datos e imprimirlos como options -->
+        <option *ngFor="let entrenador of listaEntrenadores" class="option" value="{{ entrenador.entrenadorId }}">{{ entrenador.nombre }} {{ entrenador.apellido }}</option>
+      </select>
+    </div>
+    <!-- CM: Campo de liga en la que compite el Club -->
+    <div class="form-field">
+      <label for="liga">Liga en la que compite el Club</label>
+      <select class="input-club" name="liga" id="liga">
+        <option class="option" value="0">
+          Seleccione la liga en la que compite el club Club
+        </option>
+        <!-- CM: Falta traer los valores desde la base de datos e imprimirlos como options -->
+        <option class="option" value="1">Premier League</option>
+      </select>
+    </div>
+    <!-- CM: Campo de imagen del escudo del Club -->
+    <div class="form-field">
+      <label for="imgEscudo">Imagen del escudo del Club</label>
+      <input
+        class="input-club"
+        formControlName="imgEscudo"
+        type="file"
+        id="imgEscudo"
+        [ngClass]="{'fail': imgEscudo?.errors?.['required'] && imgEscudo?.touched}"
+      />
+    </div>
+    <button type="input" class="btn-añadir">Añadir Club</button>
+  </form>
+</div>

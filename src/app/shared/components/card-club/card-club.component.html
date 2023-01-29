@@ -1,0 +1,13 @@
+<ul class="list-clubs">
+    <li class="card-club" *ngFor="let club of listClubes">
+        <div class="content-img">
+            <img src="{{ club.imgEscudo }}" alt="{{ club.nombre }}">
+        </div>
+        <div class="content">
+            <h2 class="name-club">{{ club.nombre }}</h2>
+            <p class="historia">{{ club.historia | cortarTexto }}</p>
+            <h4><span class="fecha-creacion" >Fecha de Creación: </span> {{ club.fechaFundacion | date }}</h4>
+        </div>
+        <button class="btn-club">Ver Lista de Jugadores</button>
+    </li>
+</ul>

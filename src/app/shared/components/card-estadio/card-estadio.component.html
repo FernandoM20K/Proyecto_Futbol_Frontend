@@ -1,0 +1,13 @@
+<ul class="list-estadios">
+    <li class="card-estadio" *ngFor="let estadio of listEstadios">
+        <div #imgEstadio class="content-img">
+            <img src="{{ estadio.imagen }}" alt="{{ estadio.nombre }}">
+        </div>
+        <div class="content">
+            <h2 class="name-estadio">{{ estadio.nombre }}</h2>
+            <p>Precio: <span>{{ estadio.precio }}</span></p>
+            <p>Capacidad: <span>{{ estadio.capacidad }}</span></p>
+            <p>Precio del Estadio: <span>{{ estadio.precio }}</span></p>
+        </div>
+    </li>
+</ul>

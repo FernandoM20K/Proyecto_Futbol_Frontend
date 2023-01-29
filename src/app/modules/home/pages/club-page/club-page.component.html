@@ -1,0 +1,33 @@
+<section class="clubObtenido">
+    <h1 class="nombre-club">{{ clubObtenido.nombre }}</h1>
+    <div class="historia">
+        <div class="cont-img">
+            <img src="{{ clubObtenido.imgEscudo }}" alt="imagen escudo">
+        </div>
+        <h3 class="title-historia">Historia del Club</h3>
+        <p class="historia">{{ clubObtenido.historia }}</p>
+        <h3 class="fundador">Fundador: <span class="normal">{{ clubObtenido.fundador }}</span></h3>
+        <h3 class="fecha-fundacion">Fecha Fundación: <span class="normal">{{ clubObtenido.fechaFundacion | date }}</span></h3>
+    </div>
+    <h3>Propietario Actual: <span class="normal">{{ clubObtenido.propietario }}</span></h3>
+    
+    <div class="estadio">
+        <div #imgEstadio class="img-estadio">
+            
+        </div>
+        <h2 class="nombre-estadio">Estadio del Club: <span class="normal">{{ clubObtenido.estadio.nombre }}</span></h2>
+        <h3>Ciudad Donde se Encuentra: <span class="normal">{{ clubObtenido.estadio.ciudad }}</span></h3>
+        <h3>Capacidad: <span class="normal">{{ clubObtenido.estadio.capacidad }}</span></h3>
+        <div class="imgpru"></div>
+    </div>
+
+    <div class="entrenador">
+        <h3>Entrenador: <span class="normal">{{ clubObtenido.entrenadorActual.nombre }} {{ clubObtenido.entrenadorActual.apellido }}</span></h3>
+        <h3>Nacionalidad: {{ clubObtenido.entrenadorActual.nacionalidad }}</h3>
+        <img src="./../../../../../assets/img/{{ clubObtenido.entrenadorActual.imagen }}" alt="foto Entrenador">
+    </div>
+</section>
+
+<div *ngIf="!clubObtenido">
+    <app-spinner></app-spinner>
+</div>

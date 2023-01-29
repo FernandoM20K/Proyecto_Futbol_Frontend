@@ -1,0 +1,80 @@
+<div class="container">
+    <h2 class="title-add">Formulario para Agregar Información de un Estadio</h2>
+    <form class="form-add-club" [formGroup]="estadioForm" (submit)="addEstadio()">
+      <!-- CM: Campo de nombre del Estadio -->
+      <div class="form-field">
+        <label for="nombre">Nombre del Estadio</label>
+        <input
+          class="input-club"
+          formControlName="nombre"
+          [ngClass]="{'fail': nombre?.errors?.['required'] && nombre?.touched}"
+          id="nombre"
+          type="text"
+          placeholder="Ingresa el Nombre del Estadio"
+        />
+      </div>
+      <!-- CM: Campo Ciudad donde se encuentra el estadio -->
+      <div class="form-field">
+        <label for="ciudad">Ciudad Donde se Ubica el Estadio</label>
+        <input
+          class="input-club input-club-ciudad"
+          formControlName="ciudad"
+          name="ciudad"
+          id="ciudad"
+          placeholder="Ingrese la Ciudad Donde se ubica el Estadio"
+          [ngClass]="{'fail': ciudad?.errors?.['required'] && ciudad?.touched}"
+        />
+      </div>
+      <div class="mitad">
+        <!-- CM: Campo de capacidad del Estadio -->
+        <div class="form-field">
+          <label for="capacidad">Capacidad del Estadio</label>
+          <input
+            class="input-club"
+            formControlName="capacidad"
+            type="number"
+            id="capacidad"
+            placeholder="Ingrese la capacidad del Estadio"
+            [ngClass]="{'fail': capacidad?.errors?.['required'] && capacidad?.touched}"
+        />
+        </div>
+        <!-- CM: Campo de precio del Estadio -->
+        <div class="form-field">
+          <label for="precio">Precio del Estadio (USD)</label>
+          <input
+            class="input-club"
+            formControlName="precio"
+            type="number"
+            id="precio"
+            placeholder="Ingrese el precio del Estadio"
+            [ngClass]="{'fail': precio?.errors?.['required'] && precio?.touched}"
+         />
+        </div>
+      </div>
+      <!-- CM: Campo de imagen del escudo del Club -->
+      <!-- <div class="form-field">
+        <label for="imagen">Imagen del escudo del Club</label>
+        <input
+          class="input-club"
+          formControlName="imagen"
+          type="file"
+          id="imagen"
+          [ngClass]="{'fail': imagen?.errors?.['required'] && imagen?.touched}"
+        />
+      </div> -->
+      <div class="form-field">
+        <label for="imagen">Imagen del escudo del Club (Ingrese la URL de la Imagen)</label>
+        <input
+          class="input-club"
+          formControlName="imagen"
+          type="text"
+          id="imagen"
+          placeholder="Ingrese la URL de la Imgen del estadio"
+          [ngClass]="{'fail': imagen?.errors?.['required'] && imagen?.touched}"
+        />
+      </div>
+      <div class="cont-btn">
+        <button type="input" class="btn-añadir">Añadir Estadio</button>
+      </div>
+    </form>
+  </div>
